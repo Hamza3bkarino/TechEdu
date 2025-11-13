@@ -1,0 +1,30 @@
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 20px;
+    font-family: 'Agbalumo';
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.314);
+    
+}
+ul{
+    display: flex;
+    gap: 225px;
+    width: 60%;
+    padding-top: 16px;
+}
+nav ul a{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 5px 20px; 
+
+
+}
+nav ul a:first-child , nav ul a:hover{
+    background-color: #000D1B;
+    color: white;
+    border-radius: 6px;
+}
+

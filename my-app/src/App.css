@@ -1,38 +1,246 @@
-.App {
-  text-align: center;
+
+body{
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Agbalumo';
+
+}
+/* ----------------------Home Style----------------------- */
+.Hero_Section{
+  background-image: url(../public/images/418611175_5f832f5e-5fc8-4de4-8e81-c4bcb70c4205.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.821);
+  background-blend-mode: multiply;
+  height: 90vh;
+  position: relative;
+}
+.Hero_Section h1{
+  position: absolute;
+  font-size: 100px;
+  width: 68%;
+  color: white;
+  left: 5%;
+  top: -5%;
+  
+}
+.Hero_Section .form{
+  position: absolute;
+  bottom: 15%;
+  right: 6%;
+  display: flex;
+  height: 28vh;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.Hero_Section .form label{
+  font-size: 35px;
+  color: white;
+}
+.Hero_Section .form input{
+  width: 300px;
+  padding: 18px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  background-color:#000D1B ;
+  margin-top: 20px;
+  color: white;
+  font-family: 'Agbalumo';
+
+}
+::placeholder{
+  color: white;
+  font-family: 'Agbalumo';
+
+}
+.Hero_Section .form button{
+  width: 170px;
+  font-family: 'Agbalumo';
+  padding: 9px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 35px;
+}
+.startQuiz{
+  display: flex;
+  margin: 15% auto;
+  color: white;
+  padding: 17px 59px;
+  border-radius: 6px;
+  font-size: 18px;
+  background-color: #000D1B;
+  border: none;
+  font-family: 'Agbalumo';
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ----------------------Home Style----------------------- */
+
+
+
+/* ----------------------Quiz Style----------------------- */
+
+.readyTitle{
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  color: #000D1B;
+}
+.readyTitle span{
+  color: #2884E6;
+  margin-left: 15px;
+}
+.start{
+  display: flex;
+  margin: 0 auto;
+  padding: 15px 35px;
+  border-radius: 5px;
+  border: 3px solid #2884E6;
+  background-color: #ffffff;
+  font-family: 'Agbalumo';
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.start:hover{
+  color: white;
+  background-color: #000D1B;
+  border: 3px solid transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cardQuiz{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 3%;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+.list li{
+  list-style-type: none;
+  text-align: center;
+  width: 430px;
+  padding: 18px;
+  border-radius: 7px;
+  background-color: #eee;
+  font-size: 18px;
+  border: 2px solid #2884E6;
+  position: relative;
+  cursor: pointer;
+}
+.list li:hover{
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+
+.list h3{
+  position: absolute;
+  top: -21px;
+  padding: 16px 25px;
+  left: 0px;
+  border-radius: 1px;
+  background-color: #cbc2c2;
+  border-right: 2px solid #2884e6;
+}
+.timer{
+  font-size: 30px;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 21px;
+}
+.list .valid {
+  border: 2px solid green;
+}
+.list .valid h3{
+  border-color: green;
+}
+.list .error {
+  border: 2px solid red;
+}
+.list .error h3{
+  border-color: red;
+}
+.bg{
+  margin-top: -38px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.812);
+  /* backdrop-filter: blur(4px); */
+  position: absolute;
+  z-index: 9;
+}
+.cardQuiz .countNumber{
+  font-size: 400px;
+  position: absolute;
+  z-index: 10;
+  top: 11%;
   color: white;
+  animation: popUp ease-in 0.5s;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes popUp {
+  from{
+    transform: scale(0);
   }
-  to {
-    transform: rotate(360deg);
+  to{
+    transform: scale(1.02);
   }
 }
+.timerSafe{
+  color: green;
+}
+.timerDanger{
+  color: red;
+}
+/* ----------------------Quiz Style----------------------- */
+/* ----------------------Result Style----------------------- */
+.result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+.result h1{
+  font-size: 100px;
+  color: #000D1B;
+  text-align: center;
+}
+.result h1 span{
+  color: #2884E6;
+}
+.result p{
+  font-size: 36px;
+}
+
+.goodScore{
+  color: green;
+}
+.badScore,.alertMessage{
+  color: red;
+}
+.restartQuiz{
+  padding: 15px 35px;
+  border-radius: 5px;
+  border: 3px solid #2884E6;
+  background-color: #ffffff;
+  font-family: 'Agbalumo';
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.restartQuiz:hover{
+  color: white;
+  background-color: #000D1B;
+  border: 3px solid transparent;
+}
+/* ----------------------Result Style----------------------- */
