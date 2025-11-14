@@ -4,7 +4,7 @@ import { useNavigate,useLocation } from "react-router-dom";
 
 function Quiz() {
   const location = useLocation();
-  const name = location.state;
+  const name = location.state; // get name from home page
   const navigate = useNavigate();
   const [start, setStart] = useState(false);
   const [appearAnimation, setAppearAnimation] = useState(true);
@@ -59,10 +59,10 @@ useEffect(() => {
   const handleAnswer = (item) => {
     setSelected(item);
     let result = 0
-      if (item === questions[init].answer) {
-        result=counter+1
-        setCounter(result)
-      }
+    if (item === questions[init].answer) {
+      result = counter + 1
+      setCounter(result)
+    }
 
     if (init < questions.length - 1) {
       setTimeout(() => {
@@ -79,6 +79,7 @@ useEffect(() => {
 
   return (
     <>
+      {/* if we did not start yet */}
       {!start && (
         <>
           <h1 className="readyTitle">
@@ -90,9 +91,11 @@ useEffect(() => {
         </>
       )}
 
+
+      {/* when we started */}
       {start && init < questions.length && (
         <div className="cardQuiz">
-          {appearAnimation && (
+          {appearAnimation && (  
             <>
               <div className="bg"></div>
               <span key={init} className="countNumber">

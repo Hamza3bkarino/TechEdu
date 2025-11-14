@@ -3,14 +3,17 @@ import { useLocation, useNavigate } from "react-router-dom";
 function Result() {
   const location = useLocation();
   
-  const counter = location.state?.counter; // can be undefined if user didn't come from quiz
-  const result = location.state?.result; // can be undefined if user didn't come from quiz
-  const name = location.state?.name; // can be undefined if user didn't come from quiz
+  const counter = location.state?.counter; // get counter or score
+  const result = location.state?.result; // get result or score
+  const name = location.state?.name; // get name of user
   const navigate = useNavigate()
+
+
   const handleRestart=()=>{
     navigate('/quiz')
   }
-console.log(counter);
+
+
 
 
   return (

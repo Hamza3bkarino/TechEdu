@@ -3,26 +3,29 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
     
-    const navigate = useNavigate()
+  const navigate = useNavigate()
   const [name, setName] = useState('');
   const [inputValue, setInputValue] = useState('');
 
+  // onChange input 
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
 
+
+  // after Click  on submit button
   const handleClick = () => {
     setName(inputValue);
     setInputValue('')
     document.getElementById('toQuiz')?.scrollIntoView({behavior:"smooth"})
 };
 
+  // for navigate to quiz page to start it
   const handleStart = () => {
     navigate('/quiz',{state:name})
   };
 
-  console.log('name ', name);
-  console.log('input ', inputValue);
+
 
   return (
     <>
@@ -37,7 +40,7 @@ function Home() {
             id='name'
             placeholder='your name'
             value={inputValue}
-            onChange={handleChange} // pass function directly
+            onChange={handleChange} 
           />
           <button onClick={handleClick}>Submit</button>
         </div>
